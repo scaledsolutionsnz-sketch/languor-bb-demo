@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Languor B&amp;B | Bed &amp; Breakfast, Carterton</title>
+<meta name="description" content="Languor B&B is a private, self-contained two-bedroom bed and breakfast on Waihakeke Road, Carterton, with an outdoor pool, hot tub, gardens and continental breakfast.">
+<meta property="og:title" content="Languor B&B | Bed &amp; Breakfast, Carterton">
+<meta property="og:description" content="A private countryside B&B in the Wairarapa: two bedrooms, pool, hot tub, gardens and breakfast brought to your door.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="img/hero-pool.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%231e3226'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='36' fill='%23d99a45' text-anchor='middle'%3EL%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/hero-pool.jpg" fetchpriority="high">
+<style>
+:root{
+  --ink:#1c2b21;          /* deep pine, near-black */
+  --pine:#24382c;         /* dark section background */
+  --pine-soft:#2e4536;
+  --bone:#f4f3ea;         /* light page background */
+  --band:#ecebdf;         /* alternate light band */
+  --white:#fbfaf5;
+  --amber:#c07a2d;        /* single accent */
+  --amber-bright:#d99a45; /* accent tone for text on dark */
+  --amber-btn:#96591a;    /* accent tone for filled buttons, AA vs white */
+  --amber-deep:#7c4a13;
+  --text:#2c3a30;
+  --text-soft:#5a6a5e;
+  --line:rgba(28,43,33,.14);
+  --line-dark:rgba(251,250,245,.16);
+  --radius:14px;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+img{image-orientation:from-image;max-width:100%;display:block}
+body{
+  font-family:'Karla',sans-serif;
+  color:var(--text);
+  background:var(--bone);
+  line-height:1.7;
+  font-size:16px;
+  overflow-x:hidden;
+}
+::selection{background:var(--amber);color:var(--white)}
+h1,h2,h3{font-family:'EB Garamond',serif;font-weight:500;line-height:1.15;color:var(--ink)}
+a{color:inherit}
+
+/* ---------- intro overlay ---------- */
+#intro{
+  position:fixed;inset:0;z-index:90;background:var(--pine);
+  display:flex;align-items:center;justify-content:center;
+  transition:opacity .8s var(--ease),visibility .8s;
+}
+#intro.gone{opacity:0;visibility:hidden}
+#intro .mark{font-family:'EB Garamond',serif;font-size:2.4rem;color:var(--bone);letter-spacing:.14em;opacity:0;transform:translateY(14px);animation:introIn 1s var(--ease) .15s forwards}
+#intro .mark span{color:var(--amber)}
+@keyframes introIn{to{opacity:1;transform:none}}
+
+/* ---------- nav ---------- */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:60;height:70px;
+  display:flex;align-items:center;
+  background:rgba(28,43,33,.55);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line-dark);
+  transition:background .35s var(--ease);
+}
+header.solid{background:rgba(28,43,33,.92)}
+.nav-inner{width:100%;max-width:1180px;margin:0 auto;padding:0 22px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.logo{font-family:'EB Garamond',serif;font-size:1.5rem;color:var(--bone);text-decoration:none;letter-spacing:.1em;line-height:1;display:flex;align-items:baseline;gap:.45rem}
+.logo small{font-family:'Karla',sans-serif;font-size:.72rem;letter-spacing:.2em;color:var(--amber-bright);text-transform:uppercase}
+nav.links{display:flex;align-items:center;gap:26px}
+nav.links a{color:rgba(251,250,245,.85);text-decoration:none;font-size:.92rem;font-weight:500;transition:color .25s}
+nav.links a:hover{color:var(--amber-bright)}
+.nav-phone{
+  display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 16px;
+  border:1px solid var(--line-dark);border-radius:999px;color:var(--bone);
+  text-decoration:none;font-weight:700;font-size:.9rem;line-height:1;
+  transition:border-color .25s,background .25s;
+}
+.nav-phone:hover{border-color:var(--amber-bright);background:rgba(217,154,69,.15)}
+.nav-phone svg{flex:none}
+.nav-phone .callw{display:none}
+#navToggle{display:none;background:none;border:0;cursor:pointer;padding:8px}
+#navToggle svg{display:block;color:var(--bone)}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;min-height:100dvh;background:var(--pine);
+  display:flex;flex-direction:column;justify-content:center;
+  overflow:hidden;color:var(--bone);
+}
+.hero-slides{position:absolute;inset:0}
+.hero-slides .slide{
+  position:absolute;inset:0;background-size:cover;background-position:center;
+  opacity:0;transition:opacity 1.8s var(--ease);
+}
+.hero-slides .slide.on{opacity:1}
+.hero::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(28,43,33,.68) 0%,rgba(28,43,33,.56) 45%,rgba(28,43,33,.78) 100%);
+}
+.hero-inner{position:relative;z-index:2;max-width:1180px;margin:0 auto;padding:120px 22px 64px;width:100%}
+.hero .eyebrow{
+  font-size:.8rem;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--amber-bright);font-weight:700;margin-bottom:18px;
+}
+.hero h1{
+  font-size:clamp(2.5rem,5.2vw,3.9rem);color:var(--bone);
+  max-width:22ch;margin-bottom:20px;
+}
+.hero h1 em{font-style:italic;padding-bottom:.1em}
+.hero .sub{max-width:44ch;font-size:1.08rem;color:rgba(251,250,245,.88);margin-bottom:30px}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:36px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  min-height:52px;padding:0 28px;border-radius:999px;
+  font-family:'Karla',sans-serif;font-weight:700;font-size:1rem;line-height:1;
+  text-decoration:none;cursor:pointer;border:0;
+  transition:transform .25s var(--ease),background .25s,border-color .25s,color .25s;
+}
+.btn:active{transform:scale(.98)}
+.btn-amber{background:var(--amber-btn);color:#fff}
+.btn-amber:hover{background:var(--amber-deep)}
+.btn-ghost{border:1.5px solid rgba(251,250,245,.55);color:var(--bone);background:rgba(28,43,33,.25)}
+.btn-ghost:hover{border-color:var(--amber-bright);color:var(--amber-bright)}
+.hero-quote{
+  max-width:430px;border-radius:var(--radius);
+  background:rgba(251,250,245,.1);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border:1px solid rgba(251,250,245,.22);
+  padding:18px 22px;min-height:132px;
+}
+.hero-quote .stars{color:var(--amber-bright);letter-spacing:3px;font-size:.9rem;margin-bottom:6px}
+.hero-quote blockquote{font-family:'EB Garamond',serif;font-style:italic;font-size:1.02rem;line-height:1.5;color:var(--bone);transition:opacity .6s var(--ease)}
+.hero-quote .who{font-size:.8rem;color:rgba(251,250,245,.7);margin-top:8px}
+.hero-quote.fading blockquote,.hero-quote.fading .who{opacity:0}
+.hero-quote blockquote,.hero-quote .who{opacity:1}
+
+/* ---------- sections shared ---------- */
+section{padding:96px 22px}
+.wrap{max-width:1180px;margin:0 auto}
+.sec-head{max-width:640px;margin-bottom:52px}
+.sec-head h2{font-size:clamp(1.9rem,3.4vw,2.7rem);margin-bottom:14px}
+.sec-head p{color:var(--text-soft)}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- services ---------- */
+#stay{background:var(--bone)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.card{
+  background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;display:flex;flex-direction:column;
+  transition:transform .35s var(--ease),box-shadow .35s var(--ease);
+}
+.card:hover{transform:translateY(-6px);box-shadow:0 18px 40px -18px rgba(28,43,33,.35)}
+.card img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;filter:saturate(.88) contrast(1.04)}
+.card-body{padding:22px 24px 26px}
+.card-tag{
+  display:inline-flex;align-items:center;gap:7px;
+  font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--amber-btn);margin-bottom:10px;
+}
+.card-tag svg{flex:none}
+.card h3{font-size:1.35rem;margin-bottom:8px}
+.card p{font-size:.95rem;color:var(--text-soft)}
+
+/* ---------- about ---------- */
+#about{background:var(--band)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.about-photo{position:relative}
+.about-photo img{border-radius:var(--radius);aspect-ratio:4/3;object-fit:cover;width:100%;height:auto;filter:saturate(.88) contrast(1.04)}
+.about-photo .corner{
+  position:absolute;left:-12px;bottom:-12px;background:var(--amber-btn);color:#fff;
+  border-radius:10px;padding:10px 18px;font-weight:700;font-size:.85rem;line-height:1.4;
+}
+.about-copy h2{font-size:clamp(1.9rem,3.2vw,2.6rem);margin-bottom:18px}
+.about-copy p{margin-bottom:16px;color:var(--text-soft)}
+.checks{list-style:none;margin-top:22px;display:grid;gap:12px}
+.checks li{display:flex;gap:12px;align-items:flex-start;font-weight:500;color:var(--ink)}
+.checks svg{flex:none;color:var(--amber);margin-top:3px}
+.gallery{column-count:3;column-gap:22px;margin-top:64px}
+.gallery img{width:100%;height:auto;border-radius:var(--radius);margin-bottom:22px;break-inside:avoid;filter:saturate(.88) contrast(1.04)}
+
+/* ---------- crew ---------- */
+#hosts{background:var(--bone)}
+.crew{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.crew-card{
+  background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+  padding:34px 26px;text-align:center;
+  transition:transform .35s var(--ease),box-shadow .35s var(--ease);
+}
+.crew-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px -18px rgba(28,43,33,.35)}
+.avatar{
+  width:104px;height:104px;border-radius:50%;margin:0 auto 18px;
+  background:var(--pine);border:3px solid var(--amber);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'EB Garamond',serif;font-size:2.2rem;color:var(--bone);
+}
+.avatar.photo{overflow:hidden;padding:0;background:none}
+.avatar.photo img{width:100%;height:100%;object-fit:cover}
+.crew-card .role{font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--amber-btn);margin-bottom:6px}
+.crew-card h3{font-size:1.4rem;margin-bottom:8px}
+.crew-card p{font-size:.93rem;color:var(--text-soft)}
+
+/* ---------- reviews ---------- */
+#reviews{background:var(--band)}
+.review-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;margin-bottom:40px}
+.review-card{
+  background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+  padding:28px 30px;
+}
+.review-card .stars{color:var(--amber);letter-spacing:3px;margin-bottom:12px}
+.review-card blockquote{font-family:'EB Garamond',serif;font-style:italic;font-size:1.1rem;line-height:1.5;color:var(--ink);margin-bottom:14px}
+.review-card .who{font-size:.85rem;color:var(--text-soft)}
+.review-note{font-size:.85rem;color:var(--text-soft);margin-bottom:26px}
+.review-actions{display:flex;gap:14px;flex-wrap:wrap}
+.btn-pine{background:var(--pine);color:var(--bone)}
+.btn-pine:hover{background:var(--pine-soft)}
+
+/* ---------- review banner ---------- */
+#banner{background:var(--pine);color:var(--bone);padding:72px 22px}
+.banner-inner{max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap}
+.banner-inner h2{color:var(--bone);font-size:clamp(1.6rem,2.8vw,2.2rem);max-width:24ch}
+.banner-inner p{color:rgba(251,250,245,.75);margin-top:8px;max-width:46ch}
+
+/* ---------- contact ---------- */
+#contact{background:var(--bone)}
+.contact-card{
+  max-width:1120px;margin:0 auto;background:var(--white);
+  border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+  display:grid;grid-template-columns:1fr 1fr;
+}
+.contact-map{min-height:460px}
+.contact-map iframe{width:100%;height:100%;border:0;display:block}
+.contact-info{padding:44px 44px 40px;display:flex;flex-direction:column;gap:0}
+.contact-info h2{font-size:1.9rem;margin-bottom:8px}
+.contact-info>p{color:var(--text-soft);margin-bottom:24px}
+.contact-btns{display:grid;gap:12px;margin-bottom:28px}
+.contact-btns .btn{width:100%}
+.info-rows{display:grid;gap:14px;border-top:1px solid var(--line);padding-top:24px}
+.info-row{display:flex;gap:14px;align-items:flex-start;font-size:.95rem}
+.info-row svg{flex:none;color:var(--amber);margin-top:3px}
+.info-row a{text-decoration:none;font-weight:500}
+.info-row a:hover{color:var(--amber)}
+.socials{display:flex;gap:14px;margin-top:26px}
+.socials a{
+  width:44px;height:44px;border-radius:50%;border:1px solid var(--line);
+  display:inline-flex;align-items:center;justify-content:center;color:var(--ink);
+  transition:background .25s,color .25s,border-color .25s;
+}
+.socials a:hover{background:var(--pine);color:var(--bone);border-color:var(--pine)}
+
+/* ---------- footer ---------- */
+footer{background:var(--ink);color:rgba(251,250,245,.75);padding:56px 22px 34px}
+.foot-inner{max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap}
+.foot-brand .logo{font-size:1.4rem;margin-bottom:10px}
+.foot-brand p{max-width:34ch;font-size:.9rem}
+.foot-links{display:flex;gap:40px;flex-wrap:wrap}
+.foot-links div{display:grid;gap:9px;align-content:start}
+.foot-links strong{color:var(--bone);font-size:.85rem;letter-spacing:.08em;text-transform:uppercase}
+.foot-links a{color:rgba(251,250,245,.75);text-decoration:none;font-size:.92rem}
+.foot-links a:hover{color:var(--amber-bright)}
+.foot-social{display:flex;gap:12px}
+.foot-social a{width:40px;height:40px;border-radius:50%;border:1px solid var(--line-dark);display:inline-flex;align-items:center;justify-content:center;color:var(--bone);transition:background .25s,border-color .25s}
+.foot-social a:hover{background:var(--amber);border-color:var(--amber)}
+.foot-base{max-width:1180px;margin:36px auto 0;padding-top:22px;border-top:1px solid var(--line-dark);font-size:.82rem;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+
+/* ---------- responsive ---------- */
+@media (max-width:1000px){
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .crew{grid-template-columns:repeat(3,1fr)}
+  .gallery{column-count:2}
+}
+@media (max-width:820px){
+  nav.links{
+    position:fixed;top:70px;left:0;right:0;
+    background:rgba(28,43,33,.97);flex-direction:column;align-items:flex-start;
+    padding:26px 26px 30px;gap:20px;border-bottom:1px solid var(--line-dark);
+    transform:translateY(-130%);transition:transform .4s var(--ease);
+  }
+  nav.links.open{transform:none}
+  nav.links a{font-size:1.05rem}
+  #navToggle{display:block}
+  .about-grid{grid-template-columns:1fr;gap:36px}
+  .review-grid{grid-template-columns:1fr}
+  .crew{grid-template-columns:1fr}
+  .contact-card{grid-template-columns:1fr}
+  .contact-map{min-height:320px;order:2}
+  .contact-info{order:1;padding:34px 26px}
+  section{padding:72px 18px}
+}
+@media (max-width:560px){
+  .cards{grid-template-columns:1fr}
+  .gallery{column-count:1}
+  .hero-inner{padding:104px 18px 52px}
+  .hero h1{font-size:2.1rem}
+  .hero .sub{font-size:1rem}
+  .banner-inner{flex-direction:column;align-items:flex-start}
+  .nav-inner{padding:0 16px}
+  .nav-phone{padding:0 13px}
+  .nav-phone .num{display:none}
+  .nav-phone .callw{display:inline}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<div id="intro" aria-hidden="true"><div class="mark">LANGU<span>O</span>R</div></div>
+
+<header id="header">
+  <div class="nav-inner">
+    <a class="logo" href="#top">Languor <small>Bed &amp; Breakfast</small></a>
+    <nav class="links" id="navLinks">
+      <a href="#stay">The Stay</a>
+      <a href="#about">About</a>
+      <a href="#hosts">Your Hosts</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:12px">
+      <a class="nav-phone" href="tel:+64273188180">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span class="num">027 318 8180</span><span class="callw">Call</span>
+      </a>
+      <button id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top" style="padding:0">
+  <div class="hero-slides" aria-hidden="true">
+    <div class="slide on" style="background-image:url('img/hero-pool.jpg')"></div>
+    <div class="slide" data-src="img/hero-house.jpg"></div>
+    <div class="slide" data-src="img/hero-terrace.jpg"></div>
+  </div>
+  <div class="hero-inner">
+    <p class="eyebrow">B&amp;B · Carterton, Wairarapa</p>
+    <h1>Slow mornings in the <em>Wairarapa</em> countryside</h1>
+    <p class="sub">A private, self-contained two-bedroom B&amp;B with a pool, hot tub and big garden, ten minutes from Carterton.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-amber" href="tel:+64273188180">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call Ruth to book
+      </a>
+      <a class="btn btn-ghost" href="#contact">Plan your stay</a>
+    </div>
+    <div class="hero-quote" id="heroQuote">
+      <div class="stars" aria-label="Five star review">★★★★★</div>
+      <blockquote id="hqText">Ruth and Grant are enthusiastic and friendly hosts and made us feel like guests in their home.</blockquote>
+      <div class="who" id="hqWho">Verified guest, TripAdvisor</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES / THE STAY -->
+<section id="stay">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>The whole place to yourselves</h2>
+      <p>Languor is one self-contained cottage on a rural block. You get two bedrooms, your own bathroom and kitchenette, and the run of the garden.</p>
+    </div>
+    <div class="cards">
+      <article class="card reveal">
+        <img src="img/card-suite.jpg" alt="Bright bedroom at Languor B&B with white and blue bedding" width="1000" height="750" loading="lazy">
+        <div class="card-body">
+          <span class="card-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9V5a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v4"/><path d="M2 11h20v8h-2v-3H4v3H2z"/></svg>Your space</span>
+          <h3>Two bedrooms, all yours</h3>
+          <p>Air-conditioned, with a living room, bathrobes and made-up beds. No shared hallways and no other guests.</p>
+        </div>
+      </article>
+      <article class="card reveal">
+        <img src="img/card-breakfast.jpg" alt="Continental breakfast tray with toast, muesli, juice and plunger coffee" width="1000" height="750" loading="lazy">
+        <div class="card-body">
+          <span class="card-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v6a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4z"/></svg>Breakfast</span>
+          <h3>Breakfast brought over</h3>
+          <p>Continental breakfast with proper coffee, delivered to your door. Eat at the table or out on the patio.</p>
+        </div>
+      </article>
+      <article class="card reveal">
+        <img src="img/card-pool.jpg" alt="Outdoor pool at Languor B&B with palms and a terracotta urn" width="1000" height="750" loading="lazy">
+        <div class="card-body">
+          <span class="card-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12c2-1.5 4-1.5 6 0s4 1.5 6 0 4-1.5 6 0"/><path d="M2 17c2-1.5 4-1.5 6 0s4 1.5 6 0 4-1.5 6 0"/><path d="M2 7c2-1.5 4-1.5 6 0s4 1.5 6 0 4-1.5 6 0"/></svg>Swim</span>
+          <h3>The outdoor pool</h3>
+          <p>A seasonal outdoor pool with the Tararua Range on the horizon and sun loungers for the afternoon.</p>
+        </div>
+      </article>
+      <article class="card reveal">
+        <img src="img/card-hottub.jpg" alt="Hot tub at Languor B&B lit up in the evening" width="1000" height="750" loading="lazy">
+        <div class="card-body">
+          <span class="card-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3c0 2-1.5 2.5-1.5 4S7 9 7 11"/><path d="M12 3c0 2-1.5 2.5-1.5 4S12 9 12 11"/><path d="M17 3c0 2-1.5 2.5-1.5 4S17 9 17 11"/><path d="M3 15h18v3a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3z"/></svg>Unwind</span>
+          <h3>Hot tub and spa bath</h3>
+          <p>Soak under the stars in the hot tub, or run the spa bath inside. Robes and towels are ready for you.</p>
+        </div>
+      </article>
+      <article class="card reveal">
+        <img src="img/card-garden.jpg" alt="Lawn and gardens at Languor B&B looking out to farmland" width="1000" height="750" loading="lazy">
+        <div class="card-body">
+          <span class="card-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V9"/><path d="M12 9C12 5 9 3 5 3c0 4 3 6 7 6z"/><path d="M12 13c0-4 3-6 7-6 0 4-3 6-7 6z"/></svg>Outside</span>
+          <h3>Gardens and paddock views</h3>
+          <p>Established gardens, a picnic spot and the barbecue. Mountain views come free with every direction.</p>
+        </div>
+      </article>
+      <article class="card reveal">
+        <img src="img/card-wairarapa.jpg" alt="Quiet rural road near Carterton in autumn" width="1000" height="750" loading="lazy">
+        <div class="card-body">
+          <span class="card-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Explore</span>
+          <h3>Days out in the Wairarapa</h3>
+          <p>Greytown's shops, Martinborough's cellar doors and Castlepoint are all an easy drive. Ruth knows the good spots.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-photo reveal">
+        <img src="img/about-house.jpg" alt="Languor B&B cottage set among trees and gardens" width="1200" height="900" loading="lazy">
+        <div class="corner">412 Waihakeke Road</div>
+      </div>
+      <div class="about-copy reveal">
+        <h2>A countryside stay run by the people who live here</h2>
+        <p>Languor sits on a quiet rural road between Carterton and Greytown, with farmland on every side and the Tararua Range across the paddocks. Ruth and Grant live on the property, so someone is always around if you need a dinner booking or a hand with plans.</p>
+        <p>The cottage is fully self-contained: bring your bags, and everything else is sorted. Stay a night on your way through, or make it a base for a long weekend in wine country.</p>
+        <ul class="checks">
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Private and self-contained, sleeps up to four</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Free Wi-Fi, parking and air conditioning</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Check-in from 2pm, checkout by 10am</li>
+        </ul>
+      </div>
+    </div>
+    <div class="gallery reveal">
+      <img src="img/gal-dining.jpg" alt="Dining table set for breakfast at Languor B&B" loading="lazy">
+      <img src="img/gal-sign.jpg" alt="Languor B&B sign at the gate on Waihakeke Road" loading="lazy">
+      <img src="img/gal-bedroom.jpg" alt="Cosy bedroom at Languor B&B with garden views" loading="lazy">
+      <img src="img/gal-path.jpg" alt="Garden path at Languor B&B lined with agapanthus" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- CREW -->
+<section id="hosts">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Your hosts</h2>
+      <p>Guests mention Ruth and Grant by name in nearly every review, and the four-legged locals get their share too.</p>
+    </div>
+    <div class="crew">
+      <div class="crew-card reveal">
+        <div class="avatar">R</div>
+        <div class="role">Host</div>
+        <h3>Ruth</h3>
+        <p>Runs the bookings, the breakfasts and the local tips. Will happily book you a table in Greytown before you arrive.</p>
+      </div>
+      <div class="crew-card reveal">
+        <div class="avatar">G</div>
+        <div class="role">Host</div>
+        <h3>Grant</h3>
+        <p>Keeps the pool, gardens and hot tub in order, and is good for a yarn about the Wairarapa over the fence.</p>
+      </div>
+      <div class="crew-card reveal">
+        <div class="avatar photo"><img src="img/crew-dogs.jpg" alt="Ollie and Scout, the two dogs at Languor B&B" loading="lazy"></div>
+        <div class="role">Welcoming committee</div>
+        <h3>Ollie &amp; Scout</h3>
+        <p>The resident dogs. Reviewers call them "too cute", and they take that job seriously.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>What guests say</h2>
+      <p>Rated 9.5 out of 10 from 128 guest reviews on Booking.com. These comments come from verified TripAdvisor and Booking.com guests.</p>
+    </div>
+    <div class="review-grid">
+      <div class="review-card reveal">
+        <div class="stars" aria-label="Five stars">★★★★★</div>
+        <blockquote>"Ruth and Grant are enthusiastic and friendly hosts and made us feel like guests in their home. The continental breakfast was lovely and the coffee was excellent."</blockquote>
+        <div class="who">Verified guest · TripAdvisor</div>
+      </div>
+      <div class="review-card reveal">
+        <div class="stars" aria-label="Five stars">★★★★★</div>
+        <blockquote>"Hosts Ruth and Grant are awesome, great communication and very welcoming, the furry ones Ollie and Scout are too cute! Breakfast provided was yummos!"</blockquote>
+        <div class="who">Verified guest · Booking.com</div>
+      </div>
+      <div class="review-card reveal">
+        <div class="stars" aria-label="Five stars">★★★★★</div>
+        <blockquote>"Ruth &amp; Grant were outstanding hosts, the B&amp;B was so comfortable, cozy, it was amazing! It was hard to get up in the morning."</blockquote>
+        <div class="who">Verified guest · Booking.com</div>
+      </div>
+      <div class="review-card reveal">
+        <div class="stars" aria-label="Five stars">★★★★★</div>
+        <blockquote>"Ruth was the perfect host. Suggesting a place for us to eat out and even booking it for us."</blockquote>
+        <div class="who">Verified guest · TripAdvisor</div>
+      </div>
+    </div>
+    <div class="review-actions reveal">
+      <a class="btn btn-pine" href="https://www.google.com/maps/search/?api=1&query=Languor%20B%26B%20Carterton%20New%20Zealand" target="_blank" rel="noopener">See all our Google reviews</a>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEW BANNER -->
+<section id="banner">
+  <div class="banner-inner">
+    <div class="reveal">
+      <h2>Stayed with us? Leave us a review</h2>
+      <p>A quick review helps other travellers find Languor, and it makes Ruth's day.</p>
+    </div>
+    <a class="btn btn-amber reveal" href="https://www.google.com/maps/search/?api=1&query=Languor%20B%26B%20Carterton%20New%20Zealand" target="_blank" rel="noopener">Leave a review</a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Book your stay</h2>
+      <p>Call or email Ruth with your dates. She'll confirm availability and have the place ready.</p>
+    </div>
+    <div class="contact-card reveal">
+      <div class="contact-map">
+        <iframe title="Map showing Languor B&B, 412 Waihakeke Road, Carterton" src="https://www.google.com/maps?q=Languor%20B%26B%2C%20412%20Waihakeke%20Road%2C%20Carterton%2C%20New%20Zealand&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+      <div class="contact-info">
+        <h2>Languor B&amp;B</h2>
+        <p>Waihakeke Road, between Carterton and Greytown.</p>
+        <div class="contact-btns">
+          <a class="btn btn-amber" href="tel:+64273188180">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call Languor B&amp;B
+          </a>
+          <a class="btn btn-pine" href="#" data-gmail data-user="ruthlanglands" data-domain="gmail.com" data-su="Booking%20enquiry%20-%20Languor%20B%26B">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+            Email Languor B&amp;B
+          </a>
+        </div>
+        <div class="info-rows">
+          <div class="info-row">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <a href="tel:+64273188180">027 318 8180</a>
+          </div>
+          <div class="info-row">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+            <a href="#" data-gmail data-user="ruthlanglands" data-domain="gmail.com" data-su="Booking%20enquiry%20-%20Languor%20B%26B"><span data-email-text>Email us</span></a>
+          </div>
+          <div class="info-row">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            <span>412 Waihakeke Road, RD 2, Carterton 5792</span>
+          </div>
+          <div class="info-row">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 13.5"/></svg>
+            <span>Check-in from 2:00pm · Checkout by 10:00am</span>
+          </div>
+        </div>
+        <div class="socials">
+          <a href="https://www.facebook.com/search/top?q=Languor%20B%26B%20Carterton" target="_blank" rel="noopener" aria-label="Find Languor B&B on Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/explore/search/keyword/?q=Languor%20B%26B%20Carterton" target="_blank" rel="noopener" aria-label="Find Languor B&B on Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-inner">
+    <div class="foot-brand">
+      <a class="logo" href="#top" style="text-decoration:none">Languor <small>Bed &amp; Breakfast</small></a>
+      <p>A private countryside B&amp;B on Waihakeke Road, Carterton, in the heart of the Wairarapa.</p>
+    </div>
+    <div class="foot-links">
+      <div>
+        <strong>Visit</strong>
+        <a href="#stay">The Stay</a>
+        <a href="#about">About</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div>
+        <strong>Legal</strong>
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </div>
+      <div>
+        <strong>Follow</strong>
+        <div class="foot-social">
+          <a href="https://www.facebook.com/search/top?q=Languor%20B%26B%20Carterton" target="_blank" rel="noopener" aria-label="Find Languor B&B on Facebook">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/explore/search/keyword/?q=Languor%20B%26B%20Carterton" target="_blank" rel="noopener" aria-label="Find Languor B&B on Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot-base">
+    <span>© <span id="year">2026</span> Languor B&amp;B. All rights reserved.</span>
+    <span>412 Waihakeke Road, RD 2, Carterton 5792</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* intro */
+  var intro = document.getElementById('intro');
+  window.addEventListener('load', function(){
+    setTimeout(function(){ intro.classList.add('gone'); }, reduced ? 0 : 900);
+  });
+  setTimeout(function(){ intro.classList.add('gone'); }, 2600);
+
+  /* nav */
+  var header = document.getElementById('header');
+  var toggle = document.getElementById('navToggle');
+  var links = document.getElementById('navLinks');
+  toggle.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+  });
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ links.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); });
+  });
+  var io = new IntersectionObserver(function(entries){
+    header.classList.toggle('solid', !entries[0].isIntersecting);
+  }, {rootMargin:'-80px 0px 0px 0px'});
+  io.observe(document.querySelector('.hero'));
+
+  /* hero slides */
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.hero-slides .slide'));
+  slides.forEach(function(s){
+    var src = s.getAttribute('data-src');
+    if(src){ s.style.backgroundImage = "url('" + src + "')"; }
+  });
+  var current = 0;
+  if(!reduced){
+    setInterval(function(){
+      slides[current].classList.remove('on');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('on');
+    }, 6000);
+  }
+
+  /* hero rotating quotes */
+  var quotes = [
+    {t:'Ruth and Grant are enthusiastic and friendly hosts and made us feel like guests in their home.', w:'Verified guest, TripAdvisor'},
+    {t:'The furry ones Ollie and Scout are too cute! Breakfast provided was yummos!', w:'Verified guest, Booking.com'},
+    {t:'The B&B was so comfortable, cozy, it was amazing! It was hard to get up in the morning.', w:'Verified guest, Booking.com'},
+    {t:'Ruth was the perfect host. Suggesting a place for us to eat out and even booking it for us.', w:'Verified guest, TripAdvisor'}
+  ];
+  var qBox = document.getElementById('heroQuote');
+  var qText = document.getElementById('hqText');
+  var qWho = document.getElementById('hqWho');
+  var qi = 0;
+  if(!reduced){
+    setInterval(function(){
+      qBox.classList.add('fading');
+      setTimeout(function(){
+        qi = (qi + 1) % quotes.length;
+        qText.textContent = quotes[qi].t;
+        qWho.textContent = quotes[qi].w;
+        qBox.classList.remove('fading');
+      }, 600);
+    }, 6500);
+  }
+
+  /* scroll reveals */
+  var revealIO = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('in'); revealIO.unobserve(e.target); }
+    });
+  }, {threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){ revealIO.observe(el); });
+
+  /* gmail buttons */
+  document.querySelectorAll('a[data-gmail]').forEach(function(a){
+    var to = a.getAttribute('data-user') + '@' + a.getAttribute('data-domain');
+    a.href = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(to) + '&su=' + (a.getAttribute('data-su')||'') + '&body=' + (a.getAttribute('data-body')||'');
+    a.target = '_blank'; a.rel = 'noopener';
+    var t = a.querySelector('[data-email-text]');
+    if(t){ t.textContent = to; }
+  });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
