@@ -218,9 +218,21 @@ section{padding:96px 22px}
 .review-card blockquote{font-family:'EB Garamond',serif;font-style:italic;font-size:1.1rem;line-height:1.5;color:var(--ink);margin-bottom:14px}
 .review-card .who{font-size:.85rem;color:var(--text-soft)}
 .review-note{font-size:.85rem;color:var(--text-soft);margin-bottom:26px}
+/* rating sources, one chip each */
+.ratings{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:30px}
+.rating-chip{
+  display:flex;align-items:center;gap:12px;background:var(--white);
+  border:1px solid var(--line);border-radius:var(--radius);padding:14px 20px;
+  text-decoration:none;color:inherit;transition:border-color .25s var(--ease)}
+a.rating-chip:hover{border-color:var(--amber)}
+.rating-chip .score{font-family:'EB Garamond',serif;font-size:1.75rem;line-height:1;color:var(--ink)}
+.rating-chip .meta{font-size:.8rem;line-height:1.45;color:var(--text-soft)}
+.rating-chip .meta strong{display:block;font-size:.85rem;color:var(--text);font-weight:600}
 .review-actions{display:flex;gap:14px;flex-wrap:wrap}
 .btn-pine{background:var(--pine);color:var(--bone)}
 .btn-pine:hover{background:var(--pine-soft)}
+.btn-line{border:1.5px solid var(--line);color:var(--text);background:transparent}
+.btn-line:hover{border-color:var(--amber);color:var(--amber-deep)}
 
 /* ---------- review banner ---------- */
 #banner{background:var(--pine);color:var(--bone);padding:72px 22px}
@@ -488,7 +500,17 @@ footer{background:var(--ink);color:rgba(251,250,245,.75);padding:56px 22px 34px}
   <div class="wrap">
     <div class="sec-head reveal">
       <h2>What guests say</h2>
-      <p>Rated 9.5 out of 10 from 128 guest reviews on Booking.com. These comments come from verified TripAdvisor and Booking.com guests.</p>
+      <p>Rated 4.8 out of 5 on Google and 9.5 out of 10 on Booking.com. These comments come from verified TripAdvisor and Booking.com guests.</p>
+    </div>
+    <div class="ratings reveal">
+      <a class="rating-chip" href="https://maps.google.com/?cid=10430358646815490706" target="_blank" rel="noopener">
+        <span class="score">4.8</span>
+        <span class="meta"><strong>Google</strong>11 reviews</span>
+      </a>
+      <div class="rating-chip">
+        <span class="score">9.5</span>
+        <span class="meta"><strong>Booking.com</strong>128 reviews</span>
+      </div>
     </div>
     <div class="review-grid">
       <div class="review-card reveal">
@@ -513,7 +535,7 @@ footer{background:var(--ink);color:rgba(251,250,245,.75);padding:56px 22px 34px}
       </div>
     </div>
     <div class="review-actions reveal">
-      <a class="btn btn-pine" href="https://www.google.com/maps/search/?api=1&query=Languor%20B%26B%20Carterton%20New%20Zealand" target="_blank" rel="noopener">See all our Google reviews</a>
+      <a class="btn btn-pine" href="https://maps.google.com/?cid=10430358646815490706" target="_blank" rel="noopener">See all our Google reviews</a>
     </div>
   </div>
 </section>
@@ -525,7 +547,7 @@ footer{background:var(--ink);color:rgba(251,250,245,.75);padding:56px 22px 34px}
       <h2>Stayed with us? Leave us a review</h2>
       <p>A quick review helps other travellers find Languor, and it makes Ruth's day.</p>
     </div>
-    <a class="btn btn-amber reveal" href="https://www.google.com/maps/search/?api=1&query=Languor%20B%26B%20Carterton%20New%20Zealand" target="_blank" rel="noopener">Leave a review</a>
+    <a class="btn btn-amber reveal" href="https://maps.google.com/?cid=10430358646815490706" target="_blank" rel="noopener">Leave a review</a>
   </div>
 </section>
 
@@ -552,7 +574,12 @@ footer{background:var(--ink);color:rgba(251,250,245,.75);padding:56px 22px 34px}
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
             Email Languor B&amp;B
           </a>
+          <a class="btn btn-line" href="https://maps.google.com/?cid=10430358646815490706" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            Check dates &amp; prices
+          </a>
         </div>
+        <p class="review-note" style="margin:14px 0 0">Live rates and availability show on our Google listing. For the best price, or anything the booking sites cannot answer, call Ruth directly.</p>
         <div class="info-rows">
           <div class="info-row">
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
