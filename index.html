@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Languor B&amp;B | Bed &amp; Breakfast, Carterton</title>
-<meta name="description" content="Languor B&B is a private, self-contained two-bedroom bed and breakfast on Waihakeke Road, Carterton, with an outdoor pool, hot tub, gardens and continental breakfast.">
+<meta name="description" content="Languor B&B is a private, self-contained two-bedroom bed and breakfast on Waihakeke Road, Carterton, sleeping four, with an outdoor pool, hot tub, gardens and continental breakfast.">
 <meta property="og:title" content="Languor B&B | Bed &amp; Breakfast, Carterton">
-<meta property="og:description" content="A private countryside B&B in the Wairarapa: two bedrooms, pool, hot tub, gardens and breakfast brought to your door.">
+<meta property="og:description" content="A private countryside B&B in the Wairarapa: two bedrooms, pool, hot tub, gardens and breakfast set up in your suite.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="img/hero-pool-1920.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%231e3226'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='36' fill='%23d99a45' text-anchor='middle'%3EL%3C/text%3E%3C/svg%3E">
@@ -236,7 +236,7 @@ section{padding:96px 22px}
 
 /* ---------- crew ---------- */
 #hosts{background:var(--band)}
-.crew{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.crew{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;max-width:820px}
 .crew-card{
   background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
   padding:34px 26px;text-align:center;
@@ -257,7 +257,7 @@ section{padding:96px 22px}
 
 /* ---------- reviews ---------- */
 #reviews{background:var(--bone)}
-.review-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;margin-bottom:40px}
+.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-bottom:40px}
 .review-card{
   background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
   padding:28px 30px;
@@ -333,7 +333,7 @@ footer{background:var(--ink);color:rgba(251,250,245,.75);padding:56px 22px 34px}
 /* ---------- responsive ---------- */
 @media (max-width:1000px){
   .cards{grid-template-columns:repeat(2,1fr)}
-  .crew{grid-template-columns:repeat(3,1fr)}
+  .crew{grid-template-columns:repeat(2,1fr)}
   .gallery{column-count:2}
   .feat-grid{grid-template-columns:repeat(2,1fr)}
 }
@@ -398,7 +398,7 @@ footer{background:var(--ink);color:rgba(251,250,245,.75);padding:56px 22px 34px}
    "name": "How many people does Languor suit?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "Languor has two bedrooms, a private bathroom and a lounge with a sofa bed. It's ideal for a romantic retreat, two couples or a small family. Call Ruth if you'd like to check it suits your group."
+    "text": "Languor sleeps up to four guests in two bedrooms, one with a king bed and one with a queen bed, plus a separate toilet and your own lounge. It's ideal for a romantic retreat, two couples or a small family."
    }
   },
   {
@@ -406,7 +406,7 @@ footer{background:var(--ink);color:rgba(251,250,245,.75);padding:56px 22px 34px}
    "name": "Is breakfast provided?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "Yes. A continental breakfast with proper coffee is brought to your door. The lounge also has tea and coffee facilities and a fridge, and you're welcome to bring your own food and dine at the table for four."
+    "text": "Yes. There's no kitchen, so Ruth sets up a continental breakfast in your own suite and takes the dishes away afterwards. The lounge has tea and coffee facilities and a mini fridge, so takeaways and snacks are fine."
    }
   },
   {
@@ -430,7 +430,7 @@ footer{background:var(--ink);color:rgba(251,250,245,.75);padding:56px 22px 34px}
    "name": "How do I book?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "Call Ruth on 027 318 8180 or email her with your dates. Live rates and availability also show on our Google listing."
+    "text": "Check live rates and availability on our Google listing and book online. If you have a question first, email Ruth."
    }
   }
  ]
@@ -454,9 +454,9 @@ footer{background:var(--ink);color:rgba(251,250,245,.75);padding:56px 22px 34px}
       <a href="#contact">Contact</a>
     </nav>
     <div style="display:flex;align-items:center;gap:12px">
-      <a class="nav-phone" href="tel:+64273188180">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        <span class="num">027 318 8180</span><span class="callw">Call</span>
+      <a class="nav-phone" href="#contact">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        <span class="num">Book your stay</span><span class="callw">Book</span>
       </a>
       <button id="navToggle" aria-label="Open menu" aria-expanded="false">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
@@ -475,11 +475,11 @@ footer{background:var(--ink);color:rgba(251,250,245,.75);padding:56px 22px 34px}
   <div class="hero-inner">
     <p class="eyebrow">B&amp;B · Carterton, Wairarapa</p>
     <h1>Slow mornings in the <em>Wairarapa</em> countryside</h1>
-    <p class="sub">A private, self-contained two-bedroom B&amp;B with a pool, hot tub and big garden, ten minutes from Carterton.</p>
+    <p class="sub">A private, self-contained two-bedroom B&amp;B for up to four guests, with a pool, hot tub and big garden, ten minutes from Carterton.</p>
     <div class="hero-ctas">
-      <a class="btn btn-amber" href="tel:+64273188180">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        Call Ruth to book
+      <a class="btn btn-amber" href="https://maps.google.com/?cid=10430358646815490706" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        Check dates &amp; book
       </a>
       <a class="btn btn-ghost" href="#contact">Plan your stay</a>
     </div>
@@ -519,7 +519,7 @@ footer{background:var(--ink);color:rgba(251,250,245,.75);padding:56px 22px 34px}
       <div class="feat reveal">
         <div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v6a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4z"/><path d="M6 2v2"/><path d="M10 2v2"/><path d="M14 2v2"/></svg></div>
         <h3>Delicious breakfast</h3>
-        <p>A continental breakfast with proper coffee, brought to your door. Guests rave about it in their reviews.</p>
+        <p>A continental breakfast set up for you in your own suite, with the dishes cleared away afterwards. Guests rave about it in their reviews.</p>
       </div>
       <div class="feat reveal">
         <div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/><path d="M19 3v4"/><path d="M21 5h-4"/></svg></div>
@@ -535,7 +535,7 @@ footer{background:var(--ink);color:rgba(251,250,245,.75);padding:56px 22px 34px}
   <div class="wrap">
     <div class="sec-head reveal">
       <h2>The whole place to yourselves</h2>
-      <p>Languor is a private, self-contained suite in its own secure wing of our home. You get two bedrooms, your own bathroom and lounge, and the run of the garden.</p>
+      <p>Languor is a private, self-contained suite in its own secure wing of our home. You get two bedrooms, a separate toilet, your own lounge and the run of the garden.</p>
     </div>
     <div class="cards">
       <article class="card reveal">
@@ -543,15 +543,15 @@ footer{background:var(--ink);color:rgba(251,250,245,.75);padding:56px 22px 34px}
         <div class="card-body">
           <span class="card-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9V5a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v4"/><path d="M2 11h20v8h-2v-3H4v3H2z"/></svg>Your space</span>
           <h3>Two bedrooms, all yours</h3>
-          <p>Air-conditioned, with a living room, bathrobes and made-up beds. No shared hallways and no other guests.</p>
+          <p>A king bed in one room and a queen bed in the other, sleeping up to four. Air-conditioned, with a living room, bathrobes and made-up beds. No other guests.</p>
         </div>
       </article>
       <article class="card reveal">
         <img src="img/card-breakfast-1920.webp" srcset="img/card-breakfast-1080.webp 1080w, img/card-breakfast-1920.webp 1920w" sizes="(max-width:560px) 100vw, (max-width:1000px) 50vw, 380px" width="1920" height="1440" alt="Continental breakfast tray with toast, muesli, juice and plunger coffee" loading="lazy">
         <div class="card-body">
           <span class="card-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v6a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4z"/></svg>Breakfast</span>
-          <h3>Breakfast brought over</h3>
-          <p>Continental breakfast with proper coffee, delivered to your door. Eat at the table or out on the patio.</p>
+          <h3>Breakfast in your suite</h3>
+          <p>There's no kitchen, so Ruth sets up a continental breakfast in your own suite and takes the dishes away when you're done.</p>
         </div>
       </article>
       <article class="card reveal">
@@ -566,8 +566,8 @@ footer{background:var(--ink);color:rgba(251,250,245,.75);padding:56px 22px 34px}
         <img src="img/card-hottub-1920.webp" srcset="img/card-hottub-1080.webp 1080w, img/card-hottub-1920.webp 1920w" sizes="(max-width:560px) 100vw, (max-width:1000px) 50vw, 380px" width="1920" height="1440" alt="Hot tub at Languor B&B lit up in the evening" loading="lazy">
         <div class="card-body">
           <span class="card-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3c0 2-1.5 2.5-1.5 4S7 9 7 11"/><path d="M12 3c0 2-1.5 2.5-1.5 4S12 9 12 11"/><path d="M17 3c0 2-1.5 2.5-1.5 4S17 9 17 11"/><path d="M3 15h18v3a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3z"/></svg>Unwind</span>
-          <h3>Hot tub and spa bath</h3>
-          <p>Soak under the stars in the hot tub, or run the spa bath inside. Robes and towels are ready for you.</p>
+          <h3>Hot tub under the stars</h3>
+          <p>Soak under the stars in the outdoor spa pool after a day out. Robes and towels are ready for you.</p>
         </div>
       </article>
       <article class="card reveal">
@@ -575,7 +575,7 @@ footer{background:var(--ink);color:rgba(251,250,245,.75);padding:56px 22px 34px}
         <div class="card-body">
           <span class="card-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V9"/><path d="M12 9C12 5 9 3 5 3c0 4 3 6 7 6z"/><path d="M12 13c0-4 3-6 7-6 0 4-3 6-7 6z"/></svg>Outside</span>
           <h3>Gardens and paddock views</h3>
-          <p>Established gardens, a picnic spot and the barbecue. Mountain views come free with every direction.</p>
+          <p>Established gardens and a picnic spot. Mountain views come free with every direction.</p>
         </div>
       </article>
       <article class="card reveal">
@@ -583,7 +583,7 @@ footer{background:var(--ink);color:rgba(251,250,245,.75);padding:56px 22px 34px}
         <div class="card-body">
           <span class="card-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Explore</span>
           <h3>Days out in the Wairarapa</h3>
-          <p>Greytown's shops, Martinborough's cellar doors and Castlepoint are all an easy drive. Ruth knows the good spots.</p>
+          <p>Greytown's boutique shops, the Martinborough wine trails, the wild southern coast and the east coast beaches are all an easy drive. Ruth knows the good spots.</p>
         </div>
       </article>
     </div>
@@ -602,8 +602,8 @@ footer{background:var(--ink);color:rgba(251,250,245,.75);padding:56px 22px 34px}
         <h2>Languor, the quiet, restful space</h2>
         <p>Languor is a boutique, self-contained B&amp;B nestled in the rural district of Carterton, Wairarapa, a renowned dark sky area. We offer a well-appointed private suite in a separate, secure wing of our home, ensuring peace, comfort and privacy.</p>
         <p>Languor is ideal for a romantic retreat, two couples, small families, or anyone simply wanting to take some time out and unwind.</p>
-        <p>Conveniently located near Stonehenge Aotearoa, the wine village of Martinborough and the excellent shopping of Greytown, you're perfectly positioned to explore the region. A beautiful drive will take you to the wild coast, where you can see seals and hike to the Pinnacles. The property is elevated above the surrounding farmland, offering spectacular views of both the rolling eastern ranges and the snow-capped Tararuas. It's also just a short drive to Mt Bruce, where an easy walk surrounds you with native bush and birdsong.</p>
-        <p>Languor features two luxurious bedrooms, a private bathroom, and a cosy lounge with a sofa bed, TV, tea and coffee facilities, and a fridge. You'll have everything you need to bring your own food and dine comfortably at the table for four.</p>
+        <p>You're perfectly positioned for the best of the region: dark sky stargazing, cycling, hiking, boutique shopping in Greytown and the wine trails of Martinborough. A beautiful drive will take you to the wild southern coast, where you can see seals and hike to the Pinnacles, or out to the east coast beaches. The property is elevated above the surrounding farmland, offering spectacular views of both the rolling eastern ranges and the snow-capped Tararuas.</p>
+        <p>Languor features two luxurious bedrooms, one with a king bed and one with a queen bed, a separate toilet, and a cosy lounge with a TV, tea and coffee facilities and a mini fridge. There's no kitchen, so each morning Ruth sets up breakfast in your suite and takes the dishes away. Takeaways and snacks are welcome.</p>
         <p>In summer, enjoy a refreshing swim in the pool; in the evenings, relax in the spa pool and gaze up at the stars. For your convenience, we also provide an outdoor plug for electric cars.</p>
         <p>Languor is a place to unwind, recharge, and enjoy the simple beauty of the Wairarapa countryside.</p>
         <ul class="checks">
@@ -664,7 +664,7 @@ footer{background:var(--ink);color:rgba(251,250,245,.75);padding:56px 22px 34px}
   <div class="wrap">
     <div class="sec-head reveal">
       <h2>Your hosts</h2>
-      <p>Guests mention Ruth and Grant by name in nearly every review, and the four-legged locals get their share too.</p>
+      <p>Guests mention Ruth and Grant by name in nearly every review.</p>
     </div>
     <div class="crew">
       <div class="crew-card reveal">
@@ -678,12 +678,6 @@ footer{background:var(--ink);color:rgba(251,250,245,.75);padding:56px 22px 34px}
         <div class="role">Host</div>
         <h3>Grant</h3>
         <p>Keeps the pool, gardens and hot tub in order, and is good for a yarn about the Wairarapa over the fence.</p>
-      </div>
-      <div class="crew-card reveal">
-        <div class="avatar photo"><img src="img/crew-dogs-1920.webp" srcset="img/crew-dogs-1080.webp 1080w, img/crew-dogs-1920.webp 1920w" sizes="104px" width="1920" height="1920" alt="Ollie and Scout, the two dogs at Languor B&B" loading="lazy"></div>
-        <div class="role">Welcoming committee</div>
-        <h3>Ollie &amp; Scout</h3>
-        <p>The resident dogs. Reviewers call them "too cute", and they take that job seriously.</p>
       </div>
     </div>
   </div>
@@ -711,11 +705,6 @@ footer{background:var(--ink);color:rgba(251,250,245,.75);padding:56px 22px 34px}
         <div class="stars" aria-label="Five stars">★★★★★</div>
         <blockquote>"Ruth and Grant are enthusiastic and friendly hosts and made us feel like guests in their home. The continental breakfast was lovely and the coffee was excellent."</blockquote>
         <div class="who">Verified guest · TripAdvisor</div>
-      </div>
-      <div class="review-card reveal">
-        <div class="stars" aria-label="Five stars">★★★★★</div>
-        <blockquote>"Hosts Ruth and Grant are awesome, great communication and very welcoming, the furry ones Ollie and Scout are too cute! Breakfast provided was yummos!"</blockquote>
-        <div class="who">Verified guest · Booking.com</div>
       </div>
       <div class="review-card reveal">
         <div class="stars" aria-label="Five stars">★★★★★</div>
@@ -750,7 +739,7 @@ footer{background:var(--ink);color:rgba(251,250,245,.75);padding:56px 22px 34px}
   <div class="wrap">
     <div class="sec-head reveal">
       <h2>Questions guests ask</h2>
-      <p>Anything else? Call or email Ruth and she'll be happy to help.</p>
+      <p>Anything else? Email Ruth and she'll be happy to help.</p>
     </div>
     <div class="faq-list reveal">
       <details>
@@ -759,11 +748,11 @@ footer{background:var(--ink);color:rgba(251,250,245,.75);padding:56px 22px 34px}
       </details>
       <details>
         <summary>How many people does Languor suit?</summary>
-        <p>Languor has two bedrooms, a private bathroom and a lounge with a sofa bed. It's ideal for a romantic retreat, two couples or a small family. Call Ruth if you'd like to check it suits your group.</p>
+        <p>Languor sleeps up to four guests in two bedrooms, one with a king bed and one with a queen bed, plus a separate toilet and your own lounge. It's ideal for a romantic retreat, two couples or a small family.</p>
       </details>
       <details>
         <summary>Is breakfast provided?</summary>
-        <p>Yes. A continental breakfast with proper coffee is brought to your door. The lounge also has tea and coffee facilities and a fridge, and you're welcome to bring your own food and dine at the table for four.</p>
+        <p>Yes. There's no kitchen, so Ruth sets up a continental breakfast in your own suite and takes the dishes away afterwards. The lounge has tea and coffee facilities and a mini fridge, so takeaways and snacks are fine.</p>
       </details>
       <details>
         <summary>Can I charge my electric car or e-bike?</summary>
@@ -775,7 +764,7 @@ footer{background:var(--ink);color:rgba(251,250,245,.75);padding:56px 22px 34px}
       </details>
       <details>
         <summary>How do I book?</summary>
-        <p>Call Ruth on 027 318 8180 or email her with your dates. Live rates and availability also show on our Google listing.</p>
+        <p>Check live rates and availability on our Google listing and book online. If you have a question first, email Ruth.</p>
       </details>
     </div>
   </div>
@@ -786,7 +775,7 @@ footer{background:var(--ink);color:rgba(251,250,245,.75);padding:56px 22px 34px}
   <div class="wrap">
     <div class="sec-head reveal">
       <h2>Book your stay</h2>
-      <p>Call or email Ruth with your dates. She'll confirm availability and have the place ready.</p>
+      <p>Check your dates and book online. Any questions, email Ruth and she'll get back to you.</p>
     </div>
     <div class="contact-card reveal">
       <div class="contact-map">
@@ -796,20 +785,16 @@ footer{background:var(--ink);color:rgba(251,250,245,.75);padding:56px 22px 34px}
         <h2>Languor B&amp;B</h2>
         <p>Waihakeke Road, between Carterton and Greytown.</p>
         <div class="contact-btns">
-          <a class="btn btn-amber" href="tel:+64273188180">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            Call Languor B&amp;B
+          <a class="btn btn-amber" href="https://maps.google.com/?cid=10430358646815490706" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            Check dates &amp; book
           </a>
           <a class="btn btn-pine" href="#" data-gmail data-user="ruthlanglands" data-domain="gmail.com" data-su="Booking%20enquiry%20-%20Languor%20B%26B">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
             Email Languor B&amp;B
           </a>
-          <a class="btn btn-line" href="https://maps.google.com/?cid=10430358646815490706" target="_blank" rel="noopener">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-            Check dates &amp; prices
-          </a>
         </div>
-        <p class="review-note" style="margin:14px 0 0">Live rates and availability show on our Google listing. For the best price, or anything the booking sites cannot answer, call Ruth directly.</p>
+        <p class="review-note" style="margin:14px 0 0">Live rates and availability show on our Google listing. For anything the booking sites cannot answer, email Ruth.</p>
         <div class="info-rows">
           <div class="info-row">
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -930,7 +915,6 @@ footer{background:var(--ink);color:rgba(251,250,245,.75);padding:56px 22px 34px}
   /* hero rotating quotes */
   var quotes = [
     {t:'Ruth and Grant are enthusiastic and friendly hosts and made us feel like guests in their home.', w:'Verified guest, TripAdvisor'},
-    {t:'The furry ones Ollie and Scout are too cute! Breakfast provided was yummos!', w:'Verified guest, Booking.com'},
     {t:'The B&B was so comfortable, cozy, it was amazing! It was hard to get up in the morning.', w:'Verified guest, Booking.com'},
     {t:'Ruth was the perfect host. Suggesting a place for us to eat out and even booking it for us.', w:'Verified guest, TripAdvisor'}
   ];
