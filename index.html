@@ -203,6 +203,11 @@ section{padding:96px 22px}
 .feat h3{color:var(--bone);font-size:1.25rem;margin-bottom:8px}
 .feat p{font-size:.92rem;color:rgba(251,250,245,.78)}
 .feat .ask{display:block;margin-top:10px;font-size:.8rem;font-weight:700;color:var(--amber-bright)}
+.sky{display:grid;grid-template-columns:1.5fr 1fr;gap:48px;align-items:center;margin-top:56px}
+.sky-photo img{display:block;width:100%;height:auto;border-radius:var(--radius);filter:saturate(.88) contrast(1.04)}
+.sky-copy h3{color:var(--bone);font-size:clamp(1.6rem,2.6vw,2.1rem);margin-bottom:14px}
+.sky-copy p{color:rgba(251,250,245,.78);margin-bottom:14px}
+.sky-copy .credit{font-size:.82rem;color:rgba(251,250,245,.62);margin-bottom:0}
 
 /* ---------- outdoors ---------- */
 #outdoors{background:var(--bone)}
@@ -354,6 +359,7 @@ footer{background:var(--ink);color:rgba(251,250,245,.75);padding:56px 22px 34px}
   .about-photo{position:relative;top:auto}
   .out-grid{grid-template-columns:1fr;gap:32px}
   #features{padding:64px 18px}
+  .sky{grid-template-columns:1fr;gap:26px;margin-top:40px}
   .review-grid{grid-template-columns:1fr}
   .crew{grid-template-columns:1fr}
   .contact-card{grid-template-columns:1fr}
@@ -525,6 +531,16 @@ footer{background:var(--ink);color:rgba(251,250,245,.75);padding:56px 22px 34px}
         <div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/><path d="M19 3v4"/><path d="M21 5h-4"/></svg></div>
         <h3>Dark sky</h3>
         <p>Carterton sits in a renowned dark sky area. On a clear night the stars put on a show you won't see in the city.</p>
+      </div>
+    </div>
+    <div class="sky reveal">
+      <figure class="sky-photo">
+        <img src="img/feat-darksky-1920.webp" srcset="img/feat-darksky-1080.webp 1080w, img/feat-darksky-1920.webp 1920w" sizes="(max-width:820px) 100vw, 680px" width="1920" height="1503" alt="The Milky Way across a starry night sky over the old weatherboard stable and paddock at Languor B&amp;B" loading="lazy">
+      </figure>
+      <div class="sky-copy">
+        <h3>Stars over the old stable</h3>
+        <p>This is the night sky above the old stable at Languor, with the Milky Way stretching overhead. Carterton sits in a renowned dark sky area, so on a clear night you can relax in the hot tub and gaze up at the stars.</p>
+        <p class="credit">Photo by Matthew Shirley, who stayed with us.</p>
       </div>
     </div>
   </div>
