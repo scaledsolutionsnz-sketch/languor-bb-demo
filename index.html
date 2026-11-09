@@ -101,7 +101,7 @@ nav.links a:hover{color:var(--amber-bright)}
 .hero-slides .slide.on{opacity:1}
 .hero::after{
   content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(28,43,33,.68) 0%,rgba(28,43,33,.56) 45%,rgba(28,43,33,.78) 100%);
+  background:linear-gradient(180deg,rgba(28,43,33,.62) 0%,rgba(28,43,33,.48) 45%,rgba(28,43,33,.74) 100%);
 }
 .hero-inner{position:relative;z-index:2;max-width:1180px;margin:0 auto;padding:120px 22px 64px;width:100%}
 .hero .eyebrow{
@@ -113,7 +113,7 @@ nav.links a:hover{color:var(--amber-bright)}
   max-width:22ch;margin-bottom:20px;
 }
 .hero h1 em{font-style:italic;padding-bottom:.1em}
-.hero .sub{max-width:44ch;font-size:1.08rem;color:rgba(251,250,245,.88);margin-bottom:30px}
+.hero .sub{max-width:44ch;font-size:1.08rem;color:rgba(251,250,245,.9);margin-bottom:30px;text-shadow:0 1px 14px rgba(20,30,24,.45)}
 .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:36px}
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:9px;
@@ -158,7 +158,7 @@ section{padding:96px 22px}
   transition:transform .35s var(--ease),box-shadow .35s var(--ease);
 }
 .card:hover{transform:translateY(-6px);box-shadow:0 18px 40px -18px rgba(28,43,33,.35)}
-.card img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;filter:saturate(.88) contrast(1.04)}
+.card img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;filter:saturate(.88)}
 .card-body{padding:22px 24px 26px}
 .card-tag{
   display:inline-flex;align-items:center;gap:7px;
@@ -173,7 +173,7 @@ section{padding:96px 22px}
 #about{background:var(--band)}
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
 .about-photo{position:sticky;top:100px}
-.about-photo img{border-radius:var(--radius);aspect-ratio:4/3;object-fit:cover;width:100%;height:auto;filter:saturate(.88) contrast(1.04)}
+.about-photo img{border-radius:var(--radius);aspect-ratio:4/3;object-fit:cover;width:100%;height:auto;filter:saturate(.88)}
 .about-photo .corner{
   position:absolute;left:-12px;bottom:-12px;background:var(--amber-btn);color:#fff;
   border-radius:10px;padding:10px 18px;font-weight:700;font-size:.85rem;line-height:1.4;
@@ -184,7 +184,7 @@ section{padding:96px 22px}
 .checks li{display:flex;gap:12px;align-items:flex-start;font-weight:500;color:var(--ink)}
 .checks svg{flex:none;color:var(--amber);margin-top:3px}
 .gallery{column-count:3;column-gap:22px;margin-top:64px}
-.gallery img{width:100%;height:auto;border-radius:var(--radius);margin-bottom:22px;break-inside:avoid;filter:saturate(.88) contrast(1.04)}
+.gallery img{width:100%;height:auto;border-radius:var(--radius);margin-bottom:22px;break-inside:avoid;filter:saturate(.88)}
 
 /* ---------- key features ---------- */
 #features{background:var(--pine);color:var(--bone);padding:80px 22px}
@@ -204,7 +204,7 @@ section{padding:96px 22px}
 .feat p{font-size:.92rem;color:rgba(251,250,245,.78)}
 .feat .ask{display:block;margin-top:10px;font-size:.8rem;font-weight:700;color:var(--amber-bright)}
 .sky{display:grid;grid-template-columns:1.5fr 1fr;gap:48px;align-items:center;margin-top:56px}
-.sky-photo img{display:block;width:100%;height:auto;border-radius:var(--radius);filter:saturate(.88) contrast(1.04)}
+.sky-photo img{display:block;width:100%;height:auto;border-radius:var(--radius);filter:saturate(.88)}
 .sky-copy h3{color:var(--bone);font-size:clamp(1.6rem,2.6vw,2.1rem);margin-bottom:14px}
 .sky-copy p{color:rgba(251,250,245,.78);margin-bottom:14px}
 .sky-copy .credit{font-size:.82rem;color:rgba(251,250,245,.62);margin-bottom:0}
@@ -292,6 +292,100 @@ a.rating-chip:hover{border-color:var(--amber)}
 .banner-inner{max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap}
 .banner-inner h2{color:var(--bone);font-size:clamp(1.6rem,2.8vw,2.2rem);max-width:24ch}
 .banner-inner p{color:rgba(251,250,245,.75);margin-top:8px;max-width:46ch}
+
+/* ---------- availability ---------- */
+#availability{background:var(--pine);color:var(--bone)}
+#availability .sec-head h2{color:var(--bone)}
+#availability .sec-head p{color:rgba(251,250,245,.8)}
+#availability .sec-head p strong{color:var(--amber-bright);font-weight:700}
+.avail{
+  display:grid;grid-template-columns:minmax(0,1fr) 330px;
+  background:var(--white);color:var(--text);border-radius:var(--radius);overflow:hidden;
+  box-shadow:0 30px 60px -32px rgba(0,0,0,.55);
+}
+.cal{position:relative;padding:26px 28px 22px;min-width:0}
+.cal-nav{
+  position:absolute;top:24px;z-index:1;width:44px;height:44px;border-radius:50%;
+  border:1px solid var(--line);background:var(--white);color:var(--ink);cursor:pointer;
+  display:inline-flex;align-items:center;justify-content:center;transition:border-color .25s,color .25s,opacity .25s;
+}
+.cal-nav.prev{left:24px}
+.cal-nav.next{right:24px}
+.cal-nav:hover:not(:disabled){border-color:var(--amber);color:var(--amber-deep)}
+.cal-nav:disabled{opacity:.3;cursor:default}
+.cal-nav[hidden]{display:none}
+.cal-nav:focus-visible,.cal-day:focus-visible,.stay-clear:focus-visible{outline:2px solid var(--amber-btn);outline-offset:2px}
+.cal-months{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px}
+.cal-months.one{grid-template-columns:minmax(0,1fr)}
+.cal-mtitle{font-family:'EB Garamond',serif;font-size:1.35rem;font-weight:500;color:var(--ink);text-align:center;line-height:44px;margin:-2px 0 8px}
+.cal-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));row-gap:4px}
+.cal-dow{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-soft);text-align:center;padding:2px 0 8px}
+.cal-day{
+  -webkit-appearance:none;appearance:none;border:0;background:transparent;margin:0;padding:0;
+  font:inherit;font-size:.95rem;font-weight:500;color:var(--ink);height:44px;width:100%;
+  display:flex;align-items:center;justify-content:center;cursor:pointer;
+}
+.cal-day span{position:relative;display:flex;align-items:center;justify-content:center;width:40px;height:40px;max-width:100%;border-radius:50%;transition:background .2s,color .2s,box-shadow .2s}
+.cal-day:hover:not(:disabled) span{box-shadow:inset 0 0 0 1.5px var(--ink)}
+.cal-day:disabled{cursor:default}
+.cal.is-loading .cal-day{color:rgba(28,43,33,.3)}
+.cal-day.past{color:rgba(28,43,33,.28)}
+.cal-day.taken{background:#e6e5dc;color:rgba(28,43,33,.42)}
+.cal-day.taken span{text-decoration:line-through;text-decoration-thickness:1px}
+.cal-day.co{color:var(--ink)}
+.cal-day.co span{text-decoration:none}
+.cal-day.beyond{color:rgba(28,43,33,.26)}
+.cal-day.today span::after{content:"";position:absolute;bottom:5px;left:50%;width:4px;height:4px;margin-left:-2px;border-radius:50%;background:var(--amber)}
+.cal-day.in-range,.cal-day.hover-range{background:rgba(192,122,45,.16)}
+.cal-day.start.has-end{background:linear-gradient(90deg,transparent 50%,rgba(192,122,45,.16) 50%)}
+.cal-day.end{background:linear-gradient(90deg,rgba(192,122,45,.16) 50%,transparent 50%)}
+.cal-day.start span,.cal-day.end span{background:var(--amber-btn);color:#fff;text-decoration:none}
+.cal-day.start.today span::after,.cal-day.end.today span::after{background:#fff}
+.cal-foot{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;margin-top:18px;padding-top:16px;border-top:1px solid var(--line);font-size:.82rem;color:var(--text-soft)}
+.key{display:inline-flex;align-items:center;gap:7px}
+.key i{width:16px;height:16px;border-radius:4px;border:1px solid var(--line);background:var(--white);display:inline-block}
+.key i.k-taken{background:#e6e5dc}
+.key i.k-stay{background:var(--amber-btn);border-color:var(--amber-btn)}
+.key-min{font-weight:700;color:var(--ink)}
+.cal-note{flex-basis:100%;margin:0}
+.cal-fail{padding:36px 8px 30px;text-align:center;color:var(--text-soft);max-width:440px;margin:0 auto}
+.cal-fail strong{display:block;font-family:'EB Garamond',serif;font-size:1.35rem;line-height:1.25;color:var(--ink);font-weight:500;margin-bottom:8px}
+.cal.is-failed .cal-foot,.stay.is-failed .stay-dates{display:none}
+.stay{background:var(--bone);border-left:1px solid var(--line);padding:28px 26px;display:flex;flex-direction:column}
+.stay h3{font-size:1.45rem;margin-bottom:14px}
+.stay-dates{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:12px;background:var(--white);overflow:hidden}
+.stay-dates div{padding:10px 14px}
+.stay-dates div+div{border-left:1px solid var(--line)}
+.stay-dates .lbl{display:block;font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text-soft)}
+.stay-dates .val{display:block;font-weight:700;color:var(--ink);font-size:.95rem;line-height:1.4}
+.stay-dates .val.empty{color:var(--text-soft);font-weight:500}
+.stay-msg{font-size:.9rem;color:var(--text-soft);margin:12px 0 16px;min-height:3.1em}
+.stay-msg.ok{color:var(--ink);font-weight:500}
+.stay-msg.warn{color:var(--amber-deep);font-weight:500}
+.stay .btn{width:100%}
+.stay-best{font-size:.88rem;color:var(--text-soft);margin-top:12px}
+.stay-best strong{color:var(--ink)}
+.stay-best a{color:var(--amber-deep);font-weight:700;text-decoration:none;white-space:nowrap}
+.stay-best a:hover{text-decoration:underline}
+.stay-online{margin-top:20px;padding-top:18px;border-top:1px solid var(--line)}
+.stay-online>span{display:block;font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text-soft);margin-bottom:10px}
+.stay-links{display:grid;gap:8px}
+.btn-sm{min-height:44px;padding:0 18px;font-size:.9rem}
+.stay-clear{align-self:flex-start;margin-top:14px;background:none;border:0;padding:4px 0;font:inherit;font-size:.85rem;font-weight:700;color:var(--amber-deep);cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.stay-clear[hidden]{display:none}
+@media (max-width:1100px){
+  .avail{grid-template-columns:minmax(0,1fr)}
+  .stay{border-left:0;border-top:1px solid var(--line)}
+}
+@media (max-width:560px){
+  .cal{padding:20px 14px 18px}
+  .cal-nav{top:18px}
+  .cal-nav.prev{left:12px}
+  .cal-nav.next{right:12px}
+  .cal-day{height:42px}
+  .cal-day span{width:38px;height:38px}
+  .stay{padding:24px 18px}
+}
 
 /* ---------- contact ---------- */
 #contact{background:var(--bone)}
@@ -436,7 +530,7 @@ footer{background:var(--ink);color:rgba(251,250,245,.75);padding:56px 22px 34px}
    "name": "How do I book?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "Book directly with Ruth by phone on 027 318 8180 or by email, and she'll get back to you quickly. You can also check availability and book online through our Google listing."
+    "text": "Pick your dates in the availability calendar on this page, then book direct with Ruth for our best rate, by email or by phone on 027 318 8180. She'll get back to you quickly. You can also book online through Booking.com or Airbnb."
    }
   }
  ]
@@ -460,7 +554,7 @@ footer{background:var(--ink);color:rgba(251,250,245,.75);padding:56px 22px 34px}
       <a href="#contact">Contact</a>
     </nav>
     <div style="display:flex;align-items:center;gap:12px">
-      <a class="nav-phone" href="#contact">
+      <a class="nav-phone" href="#availability">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
         <span class="num">Book your stay</span><span class="callw">Book</span>
       </a>
@@ -487,7 +581,7 @@ footer{background:var(--ink);color:rgba(251,250,245,.75);padding:56px 22px 34px}
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
         Book direct with Ruth
       </a>
-      <a class="btn btn-ghost" href="https://maps.google.com/?cid=10430358646815490706" target="_blank" rel="noopener">Check availability</a>
+      <a class="btn btn-ghost" href="#availability">Check availability</a>
     </div>
     <div class="hero-quote" id="heroQuote">
       <div class="stars" aria-label="Five star review">★★★★★</div>
@@ -778,8 +872,60 @@ footer{background:var(--ink);color:rgba(251,250,245,.75);padding:56px 22px 34px}
       </details>
       <details>
         <summary>How do I book?</summary>
-        <p>Book directly with Ruth by phone on 027 318 8180 or by email, and she'll get back to you quickly. You can also check availability and book online through our Google listing.</p>
+        <p>Pick your dates in the availability calendar on this page, then book direct with Ruth for our best rate, by email or by phone on 027 318 8180. She'll get back to you quickly. You can also book online through Booking.com or Airbnb.</p>
       </details>
+    </div>
+  </div>
+</section>
+
+<!-- AVAILABILITY -->
+<section id="availability">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Check availability</h2>
+      <p>Choose your check-in and check-out dates to see what's free. <strong>Book direct with Ruth for our best rate</strong>, and she'll reply quickly.</p>
+    </div>
+    <div class="avail reveal">
+      <div class="cal is-loading" id="cal">
+        <button type="button" class="cal-nav prev" id="calPrev" aria-label="Previous month" disabled>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+        </button>
+        <button type="button" class="cal-nav next" id="calNext" aria-label="Next month" disabled>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+        </button>
+        <div class="cal-months one" id="calMonths">
+          <p class="cal-fail">Checking the latest availability.</p>
+        </div>
+        <noscript><p class="cal-fail">Turn on JavaScript to see the availability calendar, or email Ruth with your dates.</p></noscript>
+        <div class="cal-foot">
+          <span class="key"><i aria-hidden="true"></i>Available</span>
+          <span class="key"><i class="k-taken" aria-hidden="true"></i>Taken</span>
+          <span class="key"><i class="k-stay" aria-hidden="true"></i>Your stay</span>
+          <span class="key-min">Two-night minimum</span>
+          <p class="cal-note" id="calNote">Checking the latest availability.</p>
+        </div>
+      </div>
+      <aside class="stay" id="stayPanel" aria-label="Your stay">
+        <h3>Your stay</h3>
+        <div class="stay-dates">
+          <div><span class="lbl">Check-in</span><span class="val empty" id="inVal">Add date</span></div>
+          <div><span class="lbl">Check-out</span><span class="val empty" id="outVal">Add date</span></div>
+        </div>
+        <p class="stay-msg" id="stayMsg" aria-live="polite">Choose your check-in date on the calendar.</p>
+        <a class="btn btn-amber" id="bookDirect" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=ruthlanglands%40gmail.com&amp;su=Booking%20enquiry%20for%20Languor%20B%26B" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+          Book direct with Ruth
+        </a>
+        <p class="stay-best"><strong>Book direct with Ruth for our best rate.</strong> She replies quickly, and you can also reach her on <a href="tel:+64273188180">027 318 8180</a>.</p>
+        <div class="stay-online">
+          <span>Or book online</span>
+          <div class="stay-links">
+            <a class="btn btn-line btn-sm" id="bookBooking" href="https://www.booking.com/hotel/nz/languor-b-amp-b.html" target="_blank" rel="noopener">Book on Booking.com</a>
+            <a class="btn btn-line btn-sm" id="bookAirbnb" href="https://www.airbnb.co.nz/rooms/16916007" target="_blank" rel="noopener">Book on Airbnb</a>
+          </div>
+        </div>
+        <button type="button" class="stay-clear" id="stayClear" hidden>Clear dates</button>
+      </aside>
     </div>
   </div>
 </section>
@@ -789,7 +935,7 @@ footer{background:var(--ink);color:rgba(251,250,245,.75);padding:56px 22px 34px}
   <div class="wrap">
     <div class="sec-head reveal">
       <h2>Book your stay</h2>
-      <p>Book directly with Ruth. Give her a call or send an email with your dates, and she'll get back to you quickly.</p>
+      <p>Book direct with Ruth for our best rate. Give her a call or send an email with your dates, and she'll get back to you quickly.</p>
     </div>
     <div class="contact-card reveal">
       <div class="contact-map">
@@ -808,7 +954,7 @@ footer{background:var(--ink);color:rgba(251,250,245,.75);padding:56px 22px 34px}
             Email Ruth to book
           </a>
         </div>
-        <p class="review-note" style="margin:-8px 0 22px">Ruth replies quickly to calls and emails. Prefer to book online? <a href="https://maps.google.com/?cid=10430358646815490706" target="_blank" rel="noopener" style="color:var(--amber-deep);font-weight:600">Check availability on our Google listing</a>.</p>
+        <p class="review-note" style="margin:-8px 0 22px">Ruth replies quickly to calls and emails. Not sure which dates are free? <a href="#availability" style="color:var(--amber-deep);font-weight:600">Check the availability calendar</a>.</p>
         <div class="info-rows">
           <div class="info-row">
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -854,6 +1000,7 @@ footer{background:var(--ink);color:rgba(251,250,245,.75);padding:56px 22px 34px}
         <a href="#outdoors">Outdoors</a>
         <a href="#reviews">Reviews</a>
         <a href="#faq">FAQ</a>
+        <a href="#availability">Availability</a>
         <a href="#contact">Contact</a>
       </div>
       <div>
@@ -966,6 +1113,303 @@ footer{background:var(--ink);color:rgba(251,250,245,.75);padding:56px 22px 34px}
   });
 
   document.getElementById('year').textContent = new Date().getFullYear();
+})();
+</script>
+<script>
+/* availability calendar: reads /api/availability (taken nights merged from
+   Booking.com and Airbnb on the server) and builds the booking links */
+(function(){
+  var root = document.getElementById('cal');
+  if(!root || !window.fetch){ return; }
+  var monthsEl = document.getElementById('calMonths');
+  var prevBtn = document.getElementById('calPrev');
+  var nextBtn = document.getElementById('calNext');
+  var noteEl = document.getElementById('calNote');
+  var inVal = document.getElementById('inVal');
+  var outVal = document.getElementById('outVal');
+  var msgEl = document.getElementById('stayMsg');
+  var clearBtn = document.getElementById('stayClear');
+  var directLink = document.getElementById('bookDirect');
+  var bookingLink = document.getElementById('bookBooking');
+  var airbnbLink = document.getElementById('bookAirbnb');
+  var panel = document.getElementById('stayPanel');
+
+  var DAY = 864e5;
+  var MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  var DAYS = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  var DOW = ['Mo','Tu','We','Th','Fr','Sa','Su'];
+  var EMAIL = 'ruthlanglands' + '@' + 'gmail.com';
+  var BOOKING_URL = 'https://www.booking.com/hotel/nz/languor-b-amp-b.html';
+  var AIRBNB_URL = 'https://www.airbnb.co.nz/rooms/16916007';
+  var READY_NOTE = 'Greyed-out nights are booked or not open for booking yet. The calendar updates from our bookings every few minutes.';
+  var PARTIAL_NOTE = 'Some bookings may not be showing right now, so Ruth will confirm your dates when you book.';
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var wide = window.matchMedia('(min-width: 760px)');
+
+  function dn(y, m, d){ return Math.round(Date.UTC(y, m, d) / DAY); }
+  function parts(n){ var d = new Date(n * DAY); return {y:d.getUTCFullYear(), m:d.getUTCMonth(), d:d.getUTCDate(), w:d.getUTCDay()}; }
+  function iso(n){ return new Date(n * DAY).toISOString().slice(0, 10); }
+  function fromIso(s){ var p = String(s).split('-'); return dn(+p[0], +p[1] - 1, +p[2]); }
+  function nzToday(){
+    try{
+      var o = {};
+      new Intl.DateTimeFormat('en-NZ', {timeZone:'Pacific/Auckland', year:'numeric', month:'numeric', day:'numeric'})
+        .formatToParts(new Date()).forEach(function(p){ o[p.type] = p.value; });
+      var n = dn(+o.year, +o.month - 1, +o.day);
+      if(!isNaN(n)){ return n; }
+    }catch(e){}
+    var t = new Date();
+    return dn(t.getFullYear(), t.getMonth(), t.getDate());
+  }
+  function shortDate(n){ var p = parts(n); return DAYS[p.w].slice(0, 3) + ' ' + p.d + ' ' + MONTHS[p.m].slice(0, 3) + ' ' + p.y; }
+  function panelDate(n){ var p = parts(n); return DAYS[p.w].slice(0, 3) + ' ' + p.d + ' ' + MONTHS[p.m].slice(0, 3) + (p.y !== tp.y ? ' ' + p.y : ''); }
+  function longDate(n){ var p = parts(n); return DAYS[p.w] + ' ' + p.d + ' ' + MONTHS[p.m] + ' ' + p.y; }
+  function rangeText(a, b){
+    var x = parts(a), y = parts(b);
+    if(x.y === y.y && x.m === y.m){ return x.d + ' to ' + y.d + ' ' + MONTHS[y.m] + ' ' + y.y; }
+    if(x.y === y.y){ return x.d + ' ' + MONTHS[x.m] + ' to ' + y.d + ' ' + MONTHS[y.m] + ' ' + y.y; }
+    return x.d + ' ' + MONTHS[x.m] + ' ' + x.y + ' to ' + y.d + ' ' + MONTHS[y.m] + ' ' + y.y;
+  }
+
+  var today = nzToday();
+  var tp = parts(today);
+  var S = {status:'loading', taken:{}, until:today + 365, lastOpen:today, minNights:2, partial:false, ci:null, co:null, vy:tp.y, vm:tp.m};
+
+  function minText(){ return S.minNights === 2 ? 'two-night' : S.minNights + '-night'; }
+  function blocked(n){ return n < today || n >= S.until || S.taken[n] === 1; }
+  function canCheckIn(n){
+    for(var i = 0; i < S.minNights; i++){ if(blocked(n + i)){ return false; } }
+    return true;
+  }
+  /* the latest possible check-out: the first night after check-in that is taken */
+  function limitAfter(ci){
+    var n = ci + 1;
+    while(n < S.until && !blocked(n)){ n++; }
+    return n;
+  }
+  function count(){ return wide.matches ? 2 : 1; }
+  /* the last bookable night, so the calendar doesn't page through months that are all closed */
+  function findLastOpen(){
+    for(var n = S.until - 1; n > today; n--){ if(!blocked(n)){ return n; } }
+    return today;
+  }
+  function monthIndex(n){ var p = parts(n); return p.y * 12 + p.m; }
+
+  function say(text, tone){
+    msgEl.textContent = text;
+    msgEl.className = 'stay-msg' + (tone ? ' ' + tone : '');
+  }
+
+  function render(){
+    if(S.status === 'failed'){ return; }
+    var c = count(), html = '', ready = S.status === 'ready';
+    var picking = ready && S.ci !== null && S.co === null;
+    var limit = picking ? limitAfter(S.ci) : null;
+    for(var i = 0; i < c; i++){
+      var y = S.vy, m = S.vm + i;
+      if(m > 11){ m -= 12; y++; }
+      html += '<div class="cal-month"><div class="cal-mtitle">' + MONTHS[m] + ' ' + y + '</div><div class="cal-grid">';
+      for(var k = 0; k < 7; k++){ html += '<span class="cal-dow" aria-hidden="true">' + DOW[k] + '</span>'; }
+      var first = dn(y, m, 1);
+      var pad = (parts(first).w + 6) % 7;
+      for(k = 0; k < pad; k++){ html += '<span aria-hidden="true"></span>'; }
+      var len = new Date(Date.UTC(y, m + 1, 0)).getUTCDate();
+      for(var d = 1; d <= len; d++){
+        var n = first + d - 1, cls = ['cal-day'], label = longDate(n), off = false;
+        if(n === today){ cls.push('today'); }
+        if(!ready){
+          off = true;
+        }else if(n < today){
+          cls.push('past'); off = true;
+        }else{
+          var taken = blocked(n);
+          if(taken){ cls.push('taken'); }
+          if(picking && n === limit){
+            cls.push('co'); label += taken ? ', check-out only' : ', available';
+          }else if(picking && n > limit){
+            cls.push('beyond'); off = true; label += taken ? ', taken' : ', not available with this check-in date';
+          }else if(taken){
+            off = true; label += ', taken';
+          }else{
+            label += ', available';
+          }
+          if(n === S.ci){ cls.push('start'); if(S.co !== null){ cls.push('has-end'); } label += ', your check-in'; }
+          if(S.co !== null){
+            if(n === S.co){ cls.push('end'); label += ', your check-out'; }
+            else if(n > S.ci && n < S.co){ cls.push('in-range'); }
+          }
+        }
+        html += '<button type="button" class="' + cls.join(' ') + '" data-n="' + n + '" aria-label="' + label + '"' + (off ? ' disabled' : '') + '><span>' + d + '</span></button>';
+      }
+      html += '</div></div>';
+    }
+    monthsEl.className = 'cal-months' + (c === 1 ? ' one' : '');
+    monthsEl.innerHTML = html;
+    var view = S.vy * 12 + S.vm, first = tp.y * 12 + tp.m;
+    var lastMonth = Math.max(monthIndex(S.lastOpen), first + c - 1);
+    prevBtn.disabled = !ready || view <= first;
+    nextBtn.disabled = !ready || view + c - 1 >= lastMonth;
+    if(ready){
+      noteEl.textContent = (S.partial ? PARTIAL_NOTE : READY_NOTE) + (view + c - 1 >= lastMonth ? ' Planning a stay further ahead? Email Ruth.' : '');
+    }
+  }
+
+  function links(){
+    var has = S.ci !== null && S.co !== null;
+    var su = 'Booking enquiry for Languor B&B', body = '';
+    if(has){
+      su += ', ' + rangeText(S.ci, S.co);
+      body = 'Hi Ruth,\n\nI would like to book Languor B&B direct for these dates:\n\n' +
+        'Check-in: ' + longDate(S.ci) + '\n' +
+        'Check-out: ' + longDate(S.co) + ' (' + (S.co - S.ci) + ' nights)\n' +
+        'Number of guests: \n\nThank you,\n';
+    }
+    directLink.href = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(EMAIL) +
+      '&su=' + encodeURIComponent(su) + (body ? '&body=' + encodeURIComponent(body) : '');
+    bookingLink.href = has ? BOOKING_URL + '?checkin=' + iso(S.ci) + '&checkout=' + iso(S.co) + '&group_adults=2&group_children=0&no_rooms=1' : BOOKING_URL;
+    airbnbLink.href = has ? AIRBNB_URL + '?check_in=' + iso(S.ci) + '&check_out=' + iso(S.co) + '&adults=2' : AIRBNB_URL;
+  }
+
+  function update(){
+    render();
+    inVal.textContent = S.ci !== null ? panelDate(S.ci) : 'Add date';
+    inVal.className = 'val' + (S.ci === null ? ' empty' : '');
+    outVal.textContent = S.co !== null ? panelDate(S.co) : 'Add date';
+    outVal.className = 'val' + (S.co === null ? ' empty' : '');
+    clearBtn.hidden = S.ci === null;
+    if(S.ci !== null && S.co !== null){
+      say((S.co - S.ci) + ' nights, ' + rangeText(S.ci, S.co) + '. ' + (S.partial ? 'Ruth will confirm these dates when you book.' : 'These dates are free right now.'), 'ok');
+    }else if(S.ci !== null){
+      say('Now choose your check-out date.');
+    }else{
+      say('Choose your check-in date on the calendar.');
+    }
+    links();
+  }
+
+  /* on phones the booking buttons sit under the calendar, so bring them into view */
+  function showPanel(){
+    if(window.innerWidth > 1100){ return; }
+    var r = panel.getBoundingClientRect();
+    if(r.top > window.innerHeight - 160){
+      window.scrollTo({top:window.pageYOffset + r.top - 86, behavior:reduced ? 'auto' : 'smooth'});
+    }
+  }
+
+  function choose(n){
+    if(S.status !== 'ready'){ return; }
+    if(S.ci !== null && S.co === null && n > S.ci){
+      var limit = limitAfter(S.ci);
+      if(n > limit){
+        say('Some nights in that stay are already taken. Choose a check-out date up to ' + shortDate(limit) + '.', 'warn');
+        return;
+      }
+      if(n - S.ci < S.minNights){
+        say('There is a ' + minText() + ' minimum, so the earliest check-out is ' + shortDate(S.ci + S.minNights) + '.', 'warn');
+        return;
+      }
+      S.co = n;
+      update();
+      showPanel();
+      return;
+    }
+    if(n === S.ci && S.co === null){ clearDates(); return; }
+    if(blocked(n)){ return; }
+    if(!canCheckIn(n)){
+      say('There is a ' + minText() + ' minimum, and only one night is free from ' + shortDate(n) + '. Please choose another check-in date.', 'warn');
+      return;
+    }
+    S.ci = n;
+    S.co = null;
+    update();
+  }
+
+  function clearDates(){
+    S.ci = null;
+    S.co = null;
+    update();
+  }
+
+  function shift(step){
+    var m = S.vm + step;
+    S.vy += Math.floor(m / 12);
+    S.vm = ((m % 12) + 12) % 12;
+    render();
+  }
+
+  function fail(){
+    S.status = 'failed';
+    root.classList.remove('is-loading');
+    root.classList.add('is-failed');
+    panel.classList.add('is-failed');
+    monthsEl.className = 'cal-months one';
+    monthsEl.innerHTML = '<div class="cal-fail"><strong>We couldn\'t load the calendar just now</strong>Email Ruth with the dates you have in mind and she\'ll let you know what\'s free, or check Booking.com or Airbnb.</div>';
+    prevBtn.hidden = true;
+    nextBtn.hidden = true;
+    noteEl.textContent = '';
+    say('Email Ruth with the dates you have in mind.');
+  }
+
+  function load(attempt){
+    var ctrl = window.AbortController ? new AbortController() : null;
+    var timer = setTimeout(function(){ if(ctrl){ ctrl.abort(); } }, 12000);
+    fetch('/api/availability', ctrl ? {signal:ctrl.signal} : {})
+      .then(function(r){
+        return r.json().then(function(j){
+          if(!r.ok || !j || !j.ok || !j.booked){ throw new Error('unavailable'); }
+          return j;
+        });
+      })
+      .then(function(j){
+        clearTimeout(timer);
+        var taken = {};
+        j.booked.forEach(function(b){
+          for(var n = fromIso(b.start), e = fromIso(b.end); n < e; n++){ taken[n] = 1; }
+        });
+        S.taken = taken;
+        if(j.until){ S.until = fromIso(j.until); }
+        if(j.minNights){ S.minNights = j.minNights; }
+        S.partial = !!j.partial;
+        S.lastOpen = findLastOpen();
+        S.status = 'ready';
+        root.classList.remove('is-loading');
+        update();
+      })
+      .catch(function(){
+        clearTimeout(timer);
+        if(attempt < 1){ setTimeout(function(){ load(attempt + 1); }, 2500); return; }
+        fail();
+      });
+  }
+
+  monthsEl.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('.cal-day') : null;
+    if(!b || b.disabled){ return; }
+    choose(+b.getAttribute('data-n'));
+  });
+  /* preview the stay while choosing a check-out date */
+  monthsEl.addEventListener('mouseover', function(e){
+    if(S.status !== 'ready' || S.ci === null || S.co !== null){ return; }
+    var b = e.target.closest ? e.target.closest('.cal-day') : null;
+    var h = b && !b.disabled ? +b.getAttribute('data-n') : null;
+    var all = monthsEl.querySelectorAll('.cal-day');
+    for(var i = 0; i < all.length; i++){
+      var n = +all[i].getAttribute('data-n');
+      all[i].classList.toggle('hover-range', h !== null && h > S.ci && n > S.ci && n < h);
+    }
+  });
+  monthsEl.addEventListener('mouseleave', function(){
+    var all = monthsEl.querySelectorAll('.hover-range');
+    for(var i = 0; i < all.length; i++){ all[i].classList.remove('hover-range'); }
+  });
+  prevBtn.addEventListener('click', function(){ shift(-1); });
+  nextBtn.addEventListener('click', function(){ shift(1); });
+  clearBtn.addEventListener('click', clearDates);
+  if(wide.addEventListener){ wide.addEventListener('change', render); }else if(wide.addListener){ wide.addListener(render); }
+
+  render();
+  links();
+  load(0);
 })();
 </script>
 </body>
