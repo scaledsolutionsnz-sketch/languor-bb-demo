@@ -444,6 +444,16 @@ footer{background:var(--ink);color:rgba(251,250,245,.75);padding:56px 22px 34px}
 @media (max-width:1100px){
   nav.links{gap:18px}
 }
+@media (min-width:821px) and (max-width:1000px){
+  nav.links{gap:13px}
+  nav.links a{font-size:.86rem;white-space:nowrap}
+  .nav-phone .num{display:none}
+  .nav-phone .callw{display:inline}
+}
+@media (min-width:821px) and (max-width:900px){
+  nav.links{gap:8px}
+  nav.links a{font-size:.8rem}
+}
 @media (max-width:820px){
   nav.links{
     position:fixed;top:70px;left:0;right:0;
@@ -551,6 +561,7 @@ footer{background:var(--ink);color:rgba(251,250,245,.75);padding:56px 22px 34px}
     <a class="logo" href="#top">Languor <small>Bed &amp; Breakfast</small></a>
     <nav class="links" id="navLinks">
       <a href="#stay">The Stay</a>
+      <a href="#availability">Availability</a>
       <a href="#about">About</a>
       <a href="#outdoors">Outdoors</a>
       <a href="#hosts">Your Hosts</a>
